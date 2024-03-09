@@ -62,10 +62,12 @@ $b = 3;
 $result = $a % $b;
 echo $result;
 echo "<br>";
-if ($result === 0)
-    echo "Делится " . $result;
-else
-    echo "Делится с остатком " . $result;
+if ($result === 0) {
+    echo "Делится $result";
+}
+else {
+    echo "Делится с остатком $result";
+}
 
 echo "<br>";
 
@@ -73,47 +75,54 @@ $st = pow(2,10);
 $root = sqrt(245);
 $arr = [4, 2, 5, 19, 13, 0, 10];
 $arr_sum = 0;
-foreach ($arr as $number)
+foreach ($arr as $number) {
     $arr_sum += $number ** 2;
+}
 echo "Корень суммы квадартов элементов - " . sqrt($arr_sum);
 
 $square_root1 = sqrt(379);
-echo "<br>" . "Корень из числа 379, округлённый до целых: " . round($square_root1);
-echo "<br>" . "Корень из числа 379, округлённый до десятых: " . round($square_root1,1);
-echo "<br>" . "Корень из числа 379, округлённый до сотых: " . round($square_root1,2);
+echo "<br>Корень из числа 379, округлённый до целых: " . round($square_root1);
+echo "<br>Корень из числа 379, округлённый до десятых: " . round($square_root1,1);
+echo "<br>Корень из числа 379, округлённый до сотых: " . round($square_root1,2);
 
 $square_root2 = sqrt(587);
-echo "<br>" . "Корень из числа 587, округленный в меньшую сторону: " . floor($square_root2);
-echo "<br>" . "Корень из числа 587, округленный в большую сторону: " . ceil($square_root2);
+echo "<br>Корень из числа 587, округленный в меньшую сторону: " . floor($square_root2);
+echo "<br>Корень из числа 587, округленный в большую сторону: " . ceil($square_root2);
 
 $arr_number = [4,-2,5,19,-130,0,10];
-echo "<br>" . "Максимальное число: " . max($arr_number);
-echo "<br>" . "Минимальное число: " . min($arr_number);
+echo "<br>Максимальное число: " . max($arr_number);
+echo "<br>Минимальное число: " . min($arr_number);
 
 echo "<br>" .  rand(1,100);//random value 1-100
 $arr_random = [];
-for ($i = 0; $i < 10; $i++)
-    $arr_random[$i] = rand(1,100);
+for ($i = 0; $i < 10; $i++) {
+    $arr_random[$i] = rand(1, 100);
+}
 
 $a = 66;
 $b = 128;
 echo "<br>" . abs($a-$b);
 $Array = [1,2,-1,-2,3,-3];
 $newArray = [];
-echo "<br>" . "Массив с положительными числами: ";
-for($i = 0;$i < 6; $i++)
+echo "<br>Массив с положительными числами: ";
+for($i = 0;$i < 6; $i++) {
     $newArray[$i] = abs($Array[$i]);
-foreach($newArray as $num)
+}
+foreach($newArray as $num) {
     echo $num . " ";
+}
 
 $numberDiv = 52;
 $arrDiv = [];
-for($i = 1;$i <= $numberDiv;$i++)
-    if($numberDiv % $i == 0)
+for($i = 1;$i <= $numberDiv;$i++) {
+    if ($numberDiv % $i == 0) {
         $arrDiv[] = $i;
-echo "<br>" . "Делители числа " . $numberDiv . ": ";
-foreach ($arrDiv as $num)
+    }
+}
+echo "<br>Делители числа $numberDiv : ";
+foreach ($arrDiv as $num) {
     echo $num . " ";
+}
 
 $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 $sumOfDigits = 0;
@@ -122,13 +131,50 @@ while($sumOfDigits <= 10) {
     $sumOfDigits += $array[$counter];
     $counter += 1;
 }
-echo "<br>" .  "Нужно сложить $counter первых элементов";
+echo "<br>Нужно сложить $counter первых элементов";
 
 //Task 15
-function printStringReturnNumber(): int
-{
-    echo "<br>" . "Hello, World!";
+function printStringReturnNumber(): int {
+    echo "<br>Hello, World!";
     return 7355608;
 }
 $my_num = printStringReturnNumber();
 echo "<br>" . $my_num;
+
+//Task 16
+function increaseEnthusiasm(string $string): string {
+    return $string . "!";
+}
+echo "<br>" . increaseEnthusiasm("Hello,World");
+function repeatThreeTimes(string $string):string {
+    return str_repeat($string, 3);
+}
+echo "<br>" . repeatThreeTimes("Hello!");
+
+echo "<br>" . repeatThreeTimes(increaseEnthusiasm("Hi"));
+function cut(string $string, int $number = 10): string {
+    return mb_strcut($string, 0, $number, 'utf-8');
+}
+
+function StrRecursion(array $arr): void {
+    if (count($arr) > 0) {
+        echo $arr[0] . " ";
+        array_shift($arr);
+        StrRecursion($arr);
+    }
+}
+
+echo "<br>Массив с помощью рекурсии : ";
+StrRecursion($Array);
+
+// function 6
+function SumOfDigits(int $number): int {
+
+    $SumDigits =  array_sum(str_split($number));
+    if ($SumDigits > 9) {
+        return SumOfDigits($SumDigits);
+    }
+    return $SumDigits;
+}
+
+echo "<br>" . SumOfDigits(589123085123);

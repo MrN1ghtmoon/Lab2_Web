@@ -303,3 +303,16 @@ if (3 == count($arr)){
     $sum = array_sum($arr);
     echo "<br />Сумма элементов: $sum";
 }
+
+//Task 19
+function Triangle(): void
+{
+    $string = 'x';
+    $number = 20;
+    $array = [];
+    for ($i = 1; $i <= $number; $i++){
+        $array[$i] = str_repeat($string,$i);
+        echo "<br />" . " $array[$i] ---- $i";
+    }
+}
+Triangle();

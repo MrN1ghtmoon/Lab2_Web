@@ -123,3 +123,12 @@ while($sumOfDigits <= 10) {
     $counter += 1;
 }
 echo "<br>" .  "Нужно сложить $counter первых элементов";
+
+//Task 15
+function printStringReturnNumber(): int
+{
+    echo "<br>" . "Hello, World!";
+    return 7355608;
+}
+$my_num = printStringReturnNumber();
+echo "<br>" . $my_num;

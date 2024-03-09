@@ -253,3 +253,53 @@ echo "<br />Количество элементов: " . count($array); // quant
 echo "<br />Последний элемент: " . end($array); // last element
 echo "<br />Предпоследний: " . prev($array); // penultimate element
 echo "<br />";
+
+//Task 18
+
+function sumOfTwoNumbers(int $x, int $y): bool // sumOfTwoNumbers > 10
+{
+    if ($x + $y > 10)
+    {
+        return True;
+    }
+    else
+    {
+        return False;
+    }
+}
+function EqualityOfTwoNumbers(int $x, int $y): bool
+{
+    if ($x == $y)
+    {
+        return True;
+    }
+    else
+    {
+        return False;
+    }
+}
+//short form
+$test = 0;
+if ($test == 0) echo "Верно";
+
+$age = 120;
+if (10 > $age || 99 < $age){
+    echo "<br />Возраст меньше 10 или больше 99.";
+}
+else
+{
+    $sum = array_sum(str_split($age));
+    if (9 >= $sum){
+        echo "<br />Сумма цифр однозначна.";
+    }
+    else
+    {
+        echo "<br />Сумма цифр двузначна.";
+    }
+}
+// 3 elements
+$arr = [200,-50,11];
+if (3 == count($arr)){
+    $sum = array_sum($arr);
+    echo "<br />Сумма элементов: $sum";
+}

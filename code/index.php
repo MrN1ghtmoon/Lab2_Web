@@ -115,7 +115,7 @@ foreach($newArray as $num) {
 $numberDiv = 52;
 $arrDiv = [];
 for($i = 1;$i <= $numberDiv;$i++) {
-    if ($numberDiv % $i == 0) {
+    if (($numberDiv % $i) == 0) {
         $arrDiv[] = $i;
     }
 }
@@ -127,7 +127,7 @@ foreach ($arrDiv as $num) {
 $array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 $sumOfDigits = 0;
 $counter = 0;
-while($sumOfDigits <= 10) {
+while( 10 >=  $sumOfDigits) {
     $sumOfDigits += $array[$counter];
     $counter += 1;
 }
@@ -167,11 +167,10 @@ function StrRecursion(array $arr): void {
 echo "<br>Массив с помощью рекурсии : ";
 StrRecursion($Array);
 
-// function 6
 function SumOfDigits(int $number): int {
 
     $SumDigits =  array_sum(str_split($number));
-    if ($SumDigits > 9) {
+    if (9 < $SumDigits) {
         return SumOfDigits($SumDigits);
     }
     return $SumDigits;

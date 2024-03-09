@@ -40,3 +40,16 @@ echo "<br>";
 
 //Task 12
 echo 8 ** 2;
+
+echo "<br>";
+
+//Task 13
+$my_num = 1234;
+$answer = $my_num;
+$answer += 2;
+$answer *= 2;
+$answer -= 2;
+$answer /= 2;
+$answer -= $my_num;
+
+echo $answer;

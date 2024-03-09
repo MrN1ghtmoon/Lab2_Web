@@ -258,29 +258,15 @@ echo "<br />";
 
 function sumOfTwoNumbers(int $x, int $y): bool // sumOfTwoNumbers > 10
 {
-    if ($x + $y > 10)
-    {
-        return True;
-    }
-    else
-    {
-        return False;
-    }
+    return 10 < $x + $y;
 }
 function EqualityOfTwoNumbers(int $x, int $y): bool
 {
-    if ($x == $y)
-    {
-        return True;
-    }
-    else
-    {
-        return False;
-    }
+    return $x == $y;
 }
 //short form
 $test = 0;
-if ($test == 0) echo "Верно";
+if (0 === $test) echo "Верно";
 
 $age = 120;
 if (10 > $age || 99 < $age){

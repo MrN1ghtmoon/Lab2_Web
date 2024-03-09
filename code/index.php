@@ -316,3 +316,31 @@ function Triangle(): void
     }
 }
 Triangle();
+
+//Task 20
+
+$array = [15,33,48,11,39,52,5];
+$average = array_sum($arr) / count($arr);
+echo "<br />Среднее арифметическое: $average";
+
+$number = 100;
+$sum = ($number * ($number + 1))/2;
+echo "<br />Сумма чисел: $sum";
+
+$array  = [4,9,16,25,36,49,64,81];
+$result = array_map('sqrt',$array);
+echo "<br />Массив с корнями: ";
+foreach ($result as $value)
+{
+    echo "$value ";
+}
+// combine no cycle
+$array = array_combine(range('a','z'),range(1,26));
+echo "<br />Буква и её номер:";
+foreach ($array as $character => $num)
+{
+    echo "<br />$character $num";
+}
+
+$string = '1234567890';
+echo "<br />Сумма пар: " . array_sum(str_split($string,2));
